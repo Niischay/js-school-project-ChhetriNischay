@@ -1,13 +1,17 @@
-# Timeline App
+# JS School Project - Timeline App
 
-## Stage 1: Static Skeleton
+## Stage 2: Responsive Styling
 
-This is the first stage of the Timeline App project.
+### Goal / Scope
+- Add responsive layout with Flexbox/Grid for timeline.
+- Style header, typography, and event markers.
+- Implement modal base styles.
 
-### Features Included:
-- A semantic HTML structure to organize the timeline application.
-- A `<header>` containing the app logo and a theme toggle button.
-- An empty `<nav>` element reserved for future filters or controls.
-- A `<section id="timeline">` to display event markers on the timeline.
-- An empty `<div id="modal">` that will be used for modal pop-ups.
-- Semantic tags like `<main>`, `<article>`, and `<figure>` for clean and accessible layout.
+### Features
+- Mobile-first design with breakpoints for tablet & desktop.
+- Placeholder styles for event markers.
+- Modal hidden by default.
+
+### How to Test
+1. Open `index.html` in a browser.
+2. Resize the browser window to test mobile (<768px), tablet (768–1023px), and desktop (≥1024px) views.

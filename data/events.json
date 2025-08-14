@@ -1,0 +1,50 @@
+[
+  {
+    "year": "1990",
+    "title": "Event One",
+    "description": "This is the description of Event One.",
+    "category": "History"
+  },
+  {
+    "year": "1995",
+    "title": "Event Two",
+    "description": "This is the description of Event Two.",
+    "category": "Technology"
+  },
+  {
+    "year": "2000",
+    "title": "Event Three",
+    "description": "This is the description of Event Three.",
+    "category": "Culture"
+  },
+  {
+    "year": "2005",
+    "title": "Event Four",
+    "description": "This is the description of Event Four.",
+    "category": "Science"
+  },
+  {
+    "year": "2010",
+    "title": "Event Five",
+    "description": "This is the description of Event Five.",
+    "category": "Sports"
+  },
+  {
+    "year": "2015",
+    "title": "Event Six",
+    "description": "This is the description of Event Six.",
+    "category": "Music"
+  },
+  {
+    "year": "2020",
+    "title": "Event Seven",
+    "description": "This is the description of Event Seven.",
+    "category": "Politics"
+  },
+  {
+    "year": "2025",
+    "title": "Event Eight",
+    "description": "This is the description of Event Eight.",
+    "category": "Environment"
+  }
+]

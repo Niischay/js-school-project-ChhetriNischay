@@ -3,27 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Timeline App</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Timeline</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>🕒 Timeline App</h1>
-    <button id="theme-toggle">Toggle Theme</button>
-  </header>
 
-  <nav></nav>
+  <!-- Timeline container -->
+  <div id="timeline"></div>
 
-  <main>
-    <section id="timeline"></section>
+  <!-- Modal for event details -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="close-modal" class="close">&times;</span>
+      <h2 id="modal-title"></h2>
+      <img id="modal-image" src="" alt="Event Image">
+      <p id="modal-description"></p>
+    </div>
+  </div>
 
-    <article>
-      <figure>
-        <figcaption></figcaption>
-      </figure>
-    </article>
-  </main>
-
-  <div id="modal"></div>
+  <!-- Load JS at the end for Task 3 -->
+  <script src="script.js"></script>
 </body>
 </html>

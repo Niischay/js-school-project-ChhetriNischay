@@ -1,17 +1,15 @@
 # JS School Project - Timeline App
 
-## Stage 2: Responsive Styling
+## Stage 3: Javascript
 
-### Goal / Scope
-- Add responsive layout with Flexbox/Grid for timeline.
-- Style header, typography, and event markers.
-- Implement modal base styles.
+### Task 3 – Add JavaScript Functionality
 
-### Features
-- Mobile-first design with breakpoints for tablet & desktop.
-- Placeholder styles for event markers.
-- Modal hidden by default.
+#### Changes Made
+- Created a `scripts.js` file to add interactivity to the webpage.
+- Linked `scripts.js` in `index.html` before the closing `</body>` tag.
+- Example functionality: Displays an alert when a button is clicked.
 
-### How to Test
-1. Open `index.html` in a browser.
-2. Resize the browser window to test mobile (<768px), tablet (768–1023px), and desktop (≥1024px) views.
+#### Steps to Run
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Niischay/CIA_3.git

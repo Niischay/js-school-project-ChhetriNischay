@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Timeline</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
@@ -12,16 +12,15 @@
   <div id="timeline"></div>
 
   <!-- Modal for event details -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span id="close-modal" class="close">&times;</span>
-      <h2 id="modal-title"></h2>
-      <img id="modal-image" src="" alt="Event Image">
-      <p id="modal-description"></p>
-    </div>
+  <!-- Modal section should be: -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="modal-close" class="close">&times;</span>
+    <div id="modal-content"></div>
   </div>
+</div>
 
   <!-- Load JS at the end for Task 3 -->
-  <script src="script.js"></script>
+  <script src="./dist/index.js" type="module"></script>
 </body>
 </html>

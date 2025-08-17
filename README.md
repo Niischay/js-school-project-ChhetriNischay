@@ -1,15 +1,19 @@
-# JS School Project - Timeline App
+# Timeline App  
 
-## Stage 3: Javascript
+## Task 4: Event Modal Integration  
 
-### Task 3 – Add JavaScript Functionality
+This is the fourth stage of the Timeline App project.  
 
-#### Changes Made
-- Created a `scripts.js` file to add interactivity to the webpage.
-- Linked `scripts.js` in `index.html` before the closing `</body>` tag.
-- Example functionality: Displays an alert when a button is clicked.
-
-#### Steps to Run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Niischay/CIA_3.git
+### Features Included:  
+- **Event Modal**: A modal popup to display detailed event information (title, description, date, year, and category).  
+- **Interactive Event Cards**: Clicking an event card opens the modal with its corresponding details.  
+- **Modal Controls**:  
+  - Close button (`×`) to dismiss the modal.  
+  - Clicking outside the modal also closes it.  
+- **TypeScript Integration**:  
+  - Added `EventData` interface in `types.ts` to strongly type event objects.  
+  - Improved maintainability and type safety across the project.  
+- **Project Structure**: Ensured all source files remain under the `src/` directory with `rootDir` properly configured.  
+- **Code Organization**:  
+  - `modal.ts` handles modal setup and interactions.  
+  - `index.ts` integrates modal functionality with event rendering.  

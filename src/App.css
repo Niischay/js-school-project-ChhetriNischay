@@ -1,42 +1,25 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+:root { --bg:#f5f7fa; --fg:#222; --card:#fff; --muted:#666; --border:#ddd; }
+:root.dark { --bg:#54565b; --fg:#eaeef3; --card:#18191d; --muted:#9aa4b2; --border:#2a2f3a; }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,Arial,Helvetica,sans-serif;line-height:1.5}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border-bottom:1px solid var(--border);background:var(--card)}
+.theme-toggle{border:1px solid var(--border);background:transparent;padding:.5rem .75rem;border-radius:.5rem;color:var(--fg);cursor:pointer}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+.filters{display:flex;gap:.5rem;padding:.75rem 1.25rem}
+.filters button{border:1px solid var(--border);background:transparent;padding:.4rem .65rem;border-radius:.5rem;color:var(--fg);cursor:pointer}
+.filters .active{background:var(--fg);color:var(--bg)}
 
-.card {
-  padding: 2em;
-}
+.timeline{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;padding:1.25rem}
+.event-marker{display:flex;flex-direction:column;gap:.25rem;align-items:flex-start;padding:1rem;background:var(--card);border:1px solid var(--border);border-radius:.75rem;cursor:pointer}
 
-.read-the-docs {
-  color: #888;
-}
+.event-marker:hover{outline:2px solid var(--border);}
+
+
+.event-year{font-weight:700; color: var(--fg);}
+:root.dark .event-year{color: #fff;}
+.event-title{color:var(--muted);font-size:.95rem}
+
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;padding:1rem;z-index:1000}
+.modal{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:.75rem;max-width:560px;width:100%;padding:1.25rem;position:relative}
+.modal-close{position:absolute;right:.75rem;top:.5rem;background:transparent;border:none;font-size:1.4rem;color:var(--muted);cursor:pointer}

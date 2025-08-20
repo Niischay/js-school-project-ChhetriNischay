@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useMemo, useState } from "react";
+import type { EventData } from "./types";
+import Header from "./components/Header";
+import Timeline from "./components/Timeline";
+import EventModal from "./components/EventModal";
+// import FilterPanel from "./components/FilterPanel"; // optional
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [events, setEvents] = useState<EventData[]>([]);
+  const [selected, setSelected] = useState<EventData | null>(null);
+  const [open, setOpen] = useState(false);
+  const [filter, setFilter] = useState<"All" | string>("All");
+
+  useEffect(() => {
+    fetch("/data/events.json")
+      .then(r => r.json())
+      .then((data: EventData[]) => setEvents(data))
+      .catch(err => console.error("Failed to load events.json", err));
+  }, []);
+
+  const filtered = useMemo(
+    () => (filter === "All" ? events : events.filter(e => e.category === filter)),
+    [events, filter]
+  );
+
+  const categories = useMemo(
+    () => Array.from(new Set(events.map(e => e.category))),
+    [events]
+  );
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      {/* Portal root for the modal */}
+      <div id="modal-root"></div>
 
-export default App
+      <Header />
+
+      {/* Optional: FilterPanel
+      <FilterPanel categories={categories} active={filter} onChange={setFilter} />
+      */}
+
+      <Timeline
+        events={filtered}
+        onSelect={(ev) => {
+          setSelected(ev);
+          setOpen(true);
+        }}
+      />
+      <EventModal open={open} event={selected} onClose={() => setOpen(false)} />
+    </>
+  );
+}

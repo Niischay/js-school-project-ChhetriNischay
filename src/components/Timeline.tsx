@@ -4,13 +4,25 @@ import EventMarker from "./EventMarker";
 type Props = {
   events: EventData[];
   onSelect: (e: EventData) => void;
+  selectedEventId?: number | null;
 };
 
-export default function Timeline({ events, onSelect }: Props) {
+export default function Timeline({ events, onSelect, selectedEventId }: Props) {
   return (
-    <section id="timeline" className="timeline">
+    <section 
+      id="timeline" 
+      className="timeline"
+      aria-label="Timeline of events"
+      role="list"
+    >
       {events.map(ev => (
-        <EventMarker key={ev.id} event={ev} onClick={onSelect} />
+        <div key={ev.id} role="listitem">
+          <EventMarker 
+            event={ev} 
+            onClick={onSelect} 
+            isSelected={selectedEventId === ev.id}
+          />
+        </div>
       ))}
     </section>
   );

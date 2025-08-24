@@ -3,7 +3,6 @@ import type { EventData } from "./types";
 import Header from "./components/Header";
 import Timeline from "./components/Timeline";
 import EventModal from "./components/EventModal";
-// import FilterPanel from "./components/FilterPanel"; // optional
 import "./App.css";
 
 export default function App() {
@@ -31,14 +30,9 @@ export default function App() {
 
   return (
     <>
-      {/* Portal root for the modal */}
       <div id="modal-root"></div>
 
       <Header />
-
-      {/* Optional: FilterPanel
-      <FilterPanel categories={categories} active={filter} onChange={setFilter} />
-      */}
 
       <Timeline
         events={filtered}
@@ -46,8 +40,14 @@ export default function App() {
           setSelected(ev);
           setOpen(true);
         }}
+        selectedEventId={selected?.id}
       />
-      <EventModal open={open} event={selected} onClose={() => setOpen(false)} />
+      
+      <EventModal 
+        open={open} 
+        event={selected} 
+        onClose={() => setOpen(false)} 
+      />
     </>
   );
 }
